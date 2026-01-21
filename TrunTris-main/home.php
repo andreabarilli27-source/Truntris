@@ -1,13 +1,47 @@
 <?php
 session_start();
 
+// Controlla se l'utente è loggato
 if (!isset($_SESSION['user_id'])) {
     header("Location: Account.php");
     exit();
 }
 
-// ... codice database esistente ...
+// Connessione al database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "my_truntris";
 
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Controllo connessione
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$schemi = [];
+$username = "Utente"; // Default - da modificare se hai il nome utente in sessione
+try {
+    // Recupera l'ID dell'utente dalla sessione
+    $user_id = $_SESSION['user_id'] ?? 0;
+
+    // Recupera gli schemi di impilazione dell'utente
+    $sql = "SELECT p.nome, p.bagagliaglio, p.Valigie, p.posizioni, p.data_creazione, p.ultima_modifica, p.id_utente, p.id 
+            FROM predefiniti p
+            WHERE p.id_utente = $user_id";
+    $result = mysqli_query($conn, $sql);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $schemi = $result->fetch_all(MYSQLI_ASSOC);
+    } else {
+        $schemi = []; // Nessun risultato trovato
+    }
+} catch (Exception $e) {
+    echo "Errore: " . $e->getMessage();
+}
+
+// Imposta il titolo della pagina
 $page_title = "Home - I Tuoi Schemi";
 require_once 'includes/header.php';
 ?>
