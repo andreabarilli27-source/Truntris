@@ -1,0 +1,73 @@
+/* responsive.css - Responsive design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .nav-link {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .schemas-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .form-container {
+        margin: 20px;
+        padding: 25px;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    .input-group input {
+        width: 100%;
+    }
+    
+    .schema-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    .stats {
+        flex-direction: column;
+    }
+    
+    .stat-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard {
+        padding: 20px 10px;
+    }
+    
+    .form-container {
+        padding: 20px;
+    }
+    
+    #info, #form-container, #controls {
+        padding: 15px;
+        max-width: 95%;
+    }
+}
