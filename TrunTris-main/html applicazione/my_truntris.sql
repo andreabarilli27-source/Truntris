@@ -12,7 +12,7 @@ CREATE TABLE `Users` (
 );
 
 INSERT INTO `Users` (`id`, `nome`, `cognome`, `username`, `data_nascita`, `password`, `email`) VALUES
-(1, 'Andrea', 'Barilli', 'barillia', '2006-10-27', '$2y$10$ZzDGIwAXbeUWgZHHaKt3pOCVZ8Jmp6DEmOFAOGx6JruH8Q4I1mt.O', 'andreabarilli27@gmai.com');
+(1, 'Andrea', 'Barilli', 'barillia', '2006-10-27', '$2y$10$UpH8erf/0RaLGdXwO59fDOJ4NDF.sqMrEDJESBbwM8qD8WU56NdRu', 'andreabarilli27@gmai.com');
 
 CREATE TABLE `Predefiniti` (
   `ID` int AUTO_INCREMENT PRIMARY KEY NOT NULL,
