@@ -10,6 +10,7 @@ CREATE TABLE `Users` (
   `password` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL
 );
+
 INSERT INTO `Users` (`id`, `nome`, `cognome`, `username`, `data_nascita`, `password`, `email`) VALUES
 (1, 'Davide', 'Pe', 'bestiaccia_rara', '2006-09-06', '$2y$10$ZzDGIwAXbeUWgZHHaKt3pOCVZ8Jmp6DEmOFAOGx6JruH8Q4I1mt.O', 'davide.pe2006@gmail.com');
 
@@ -17,13 +18,15 @@ CREATE TABLE `Predefiniti` (
   `ID` int AUTO_INCREMENT PRIMARY KEY NOT NULL,
   `nome` varchar(255) NOT NULL,
   `bagagliaglio` varchar(255) NOT NULL,
-  descrizione varchar(255) NOT NULL,
-  `Valigie` varchar(255) NOT NULL,
-  `posizioni` varchar(255) NOT NULL,
-  `data_creazione` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `ultima_modifica` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `id_utente` int foreign key NOT NULL
-  constraint (`id_utente`) references `Users`(`ID`) on delete cascade on update cascade
+  `descrizione` varchar(255) NOT NULL,
+  `Valigie` text NOT NULL,
+  `posizioni` text NOT NULL,
+  `data_creazione` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `ultima_modifica` timestamp DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `id_utente` int NOT NULL,
+  CONSTRAINT `fk_predefiniti_users` 
+    FOREIGN KEY (`id_utente`) 
+    REFERENCES `Users`(`ID`) 
+    ON DELETE CASCADE 
+    ON UPDATE CASCADE
 );
-
-
