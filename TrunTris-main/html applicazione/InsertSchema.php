@@ -24,12 +24,12 @@ require_once 'includes/header.php';
         
         <div class="form-group">
             <input type="text" name="dimensioni_bagagliaio" 
-                   placeholder="Dimensioni del bagagliaio (es. 100x80x50 cm)" 
+                   placeholder="Dimensioni del Container (es. 100x80x50 cm)" 
                    class="form-control" required>
         </div>
         
         <div class="form-group">
-            <label class="form-label">Valigie (larghezza, altezza, profondità):</label>
+            <label class="form-label">Cargo (larghezza, altezza, profondità):</label>
             <div id="valigie-container">
                 <div class="valigia-group">
                     <div class="input-group">
@@ -46,7 +46,7 @@ require_once 'includes/header.php';
             </div>
             
             <button type="button" onclick="addValigia()" class="btn btn-outline mt-2">
-                <i class="fas fa-plus"></i> Aggiungi Valigia
+                <i class="fas fa-plus"></i> Aggiungi Cargo
             </button>
         </div>
         
@@ -144,3 +144,4 @@ require_once 'includes/header.php';
 </script>
 
 <?php require_once 'includes/footer.php'; ?>
+
