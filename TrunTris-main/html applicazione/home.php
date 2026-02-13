@@ -72,7 +72,7 @@ require_once 'includes/header.php';
                     </div>
                     
                     <div class="schema-details">
-                        <p><i class="fas fa-ruler-combined"></i> Bagagliaio: <?= htmlspecialchars($schema['bagagliaglio']) ?></p>
+                        <p><i class="fas fa-ruler-combined"></i> Container: <?= htmlspecialchars($schema['bagagliaglio']) ?></p>
                         <p><i class="fas fa-clock"></i> Modificato: <?= htmlspecialchars($schema['ultima_modifica']) ?></p>
                     </div>
                     
